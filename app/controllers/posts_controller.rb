@@ -1,6 +1,5 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
-  layout "admin"
   before_filter :authenticate_user!
 
   # GET /posts
