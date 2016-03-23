@@ -1,0 +1,35 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  name: MyString
+  full_name: MyString
+  description: MyString
+  private: false
+  fork: false
+  url: MyString
+  html_url: MyString
+  archive_url: MyString
+  assignees_url: MyString
+  collaborators_url: MyString
+  commits_url: MyString
+  contributors_url: MyString
+  forks_url: MyString
+  homepage: MyString
+
+two:
+  user_id: 
+  name: MyString
+  full_name: MyString
+  description: MyString
+  private: false
+  fork: false
+  url: MyString
+  html_url: MyString
+  archive_url: MyString
+  assignees_url: MyString
+  collaborators_url: MyString
+  commits_url: MyString
+  contributors_url: MyString
+  forks_url: MyString
+  homepage: MyString

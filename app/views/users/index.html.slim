@@ -1,0 +1,31 @@
+h1 Listing users
+
+table
+  thead
+    tr
+      th Login
+      th Avatar url
+      th Url
+      th Html url
+      th Repos url
+      th Type
+      th
+      th
+      th
+
+  tbody
+    - @users.each do |user|
+      tr
+        td = user.login
+        td = user.avatar_url
+        td = user.url
+        td = user.html_url
+        td = user.repos_url
+        td = user.type
+        td = link_to 'Show', user
+        td = link_to 'Edit', edit_user_path(user)
+        td = link_to 'Destroy', user, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New User', new_user_path

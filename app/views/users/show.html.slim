@@ -1,0 +1,24 @@
+p#notice = notice
+
+p
+  strong Login:
+  = @user.login
+p
+  strong Avatar url:
+  = @user.avatar_url
+p
+  strong Url:
+  = @user.url
+p
+  strong Html url:
+  = @user.html_url
+p
+  strong Repos url:
+  = @user.repos_url
+p
+  strong Type:
+  = @user.type
+
+= link_to 'Edit', edit_user_path(@user)
+'|
+= link_to 'Back', users_path

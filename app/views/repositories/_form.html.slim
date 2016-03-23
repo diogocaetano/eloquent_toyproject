@@ -1,0 +1,54 @@
+= form_for @repository do |f|
+  - if @repository.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@repository.errors.count, "error")} prohibited this repository from being saved:"
+      ul
+        - @repository.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :user
+    = f.text_field :user
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :full_name
+    = f.text_field :full_name
+  .field
+    = f.label :description
+    = f.text_field :description
+  .field
+    = f.label :private
+    = f.check_box :private
+  .field
+    = f.label :fork
+    = f.check_box :fork
+  .field
+    = f.label :url
+    = f.text_field :url
+  .field
+    = f.label :html_url
+    = f.text_field :html_url
+  .field
+    = f.label :archive_url
+    = f.text_field :archive_url
+  .field
+    = f.label :assignees_url
+    = f.text_field :assignees_url
+  .field
+    = f.label :collaborators_url
+    = f.text_field :collaborators_url
+  .field
+    = f.label :commits_url
+    = f.text_field :commits_url
+  .field
+    = f.label :contributors_url
+    = f.text_field :contributors_url
+  .field
+    = f.label :forks_url
+    = f.text_field :forks_url
+  .field
+    = f.label :homepage
+    = f.text_field :homepage
+  .actions = f.submit

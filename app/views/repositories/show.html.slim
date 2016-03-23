@@ -1,0 +1,51 @@
+p#notice = notice
+
+p
+  strong User:
+  = @repository.user
+p
+  strong Name:
+  = @repository.name
+p
+  strong Full name:
+  = @repository.full_name
+p
+  strong Description:
+  = @repository.description
+p
+  strong Private:
+  = @repository.private
+p
+  strong Fork:
+  = @repository.fork
+p
+  strong Url:
+  = @repository.url
+p
+  strong Html url:
+  = @repository.html_url
+p
+  strong Archive url:
+  = @repository.archive_url
+p
+  strong Assignees url:
+  = @repository.assignees_url
+p
+  strong Collaborators url:
+  = @repository.collaborators_url
+p
+  strong Commits url:
+  = @repository.commits_url
+p
+  strong Contributors url:
+  = @repository.contributors_url
+p
+  strong Forks url:
+  = @repository.forks_url
+p
+  strong Homepage:
+  = @repository.homepage
+
+= link_to 'Edit', edit_repository_path(@repository)
+'|
+= link_to 'Back', repositories_path

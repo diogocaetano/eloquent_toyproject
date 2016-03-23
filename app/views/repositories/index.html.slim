@@ -1,0 +1,49 @@
+h1 Listing repositories
+
+table
+  thead
+    tr
+      th User
+      th Name
+      th Full name
+      th Description
+      th Private
+      th Fork
+      th Url
+      th Html url
+      th Archive url
+      th Assignees url
+      th Collaborators url
+      th Commits url
+      th Contributors url
+      th Forks url
+      th Homepage
+      th
+      th
+      th
+
+  tbody
+    - @repositories.each do |repository|
+      tr
+        td = repository.user
+        td = repository.name
+        td = repository.full_name
+        td = repository.description
+        td = repository.private
+        td = repository.fork
+        td = repository.url
+        td = repository.html_url
+        td = repository.archive_url
+        td = repository.assignees_url
+        td = repository.collaborators_url
+        td = repository.commits_url
+        td = repository.contributors_url
+        td = repository.forks_url
+        td = repository.homepage
+        td = link_to 'Show', repository
+        td = link_to 'Edit', edit_repository_path(repository)
+        td = link_to 'Destroy', repository, data: {:confirm => 'Are you sure?'}, :method => :delete
+
+br
+
+= link_to 'New Repository', new_repository_path
