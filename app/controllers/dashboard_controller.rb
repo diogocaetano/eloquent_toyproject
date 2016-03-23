@@ -1,14 +1,15 @@
 class DashboardController < ApplicationController
   
+  #github teste = julianalucena
+  
   def index
+
     @user = User.where(login: params[:github_user]).first
     
     if not @user
+      
       @user = github_user = ApiConnect.get_user(params[:github_user])
 
-        p github_user.login
-        p '*****************************************************'
-               
       @repositories = user_repositories = ApiConnect.get_user_repositories(github_user.login)
 
       user = User.create(
@@ -17,7 +18,11 @@ class DashboardController < ApplicationController
         url: github_user.url,
         html_url: github_user.html_url,
         repos_url: github_user.repos_url,
-        type: github_user.type
+        type: github_user.type,
+        public_repos: github_user.public_repos,
+        company: github_user.company,
+        following: github_user.following,
+        location: github_user.location
       )
 
       user_repositories.each do |repository|
@@ -42,13 +47,10 @@ class DashboardController < ApplicationController
 
       end  
 
-    else
-     
+    else    
       
         @repositories = ApiConnect.get_user_repositories(@user.login)
-      # else
-        # @repositories = Repository.where(user_id: @user.id).order('name','created_at')
-      # end
+  
     end
   end
 

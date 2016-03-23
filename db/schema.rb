@@ -42,8 +42,12 @@ ActiveRecord::Schema.define(version: 20160323023928) do
     t.string   "html_url"
     t.string   "repos_url"
     t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "public_repos"
+    t.string   "company"
+    t.string   "following"
+    t.string   "location"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
 
 end
