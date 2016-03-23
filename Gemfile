@@ -28,6 +28,8 @@ gem 'slim-rails'
 
 gem 'devise'
 
+gem "github_api"
+
 
 gem "twitter-bootstrap-rails"
 
