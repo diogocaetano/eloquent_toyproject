@@ -14,6 +14,14 @@ Rails.application.routes.draw do
 
   get "/:github_user", to: "dashboard#index"
 
+  #api
+  namespace :api do
+    namespace :v1 do
+      get '/:github_user' => 'users#show'
+      get 'repositories/:github_user' => 'repositories#index'
+    end
+  end
+
   # root to: "dashboard#index", github_user: 'diogocaetano'
 
   # The priority is based upon order of creation: first created -> highest priority.

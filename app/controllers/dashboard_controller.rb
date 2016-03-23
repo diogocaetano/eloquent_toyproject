@@ -13,7 +13,7 @@ class DashboardController < ApplicationController
       if not @user.nil?
 
         @repositories = user_repositories = ApiConnect.get_user_repositories(github_user.login)
-
+        
         user = User.create(
           login: github_user.login, 
           avatar_url: github_user.avatar_url, 
@@ -21,10 +21,6 @@ class DashboardController < ApplicationController
           html_url: github_user.html_url,
           repos_url: github_user.repos_url,
           type: github_user.type,
-          public_repos: github_user.public_repos,
-          company: github_user.company,
-          following: github_user.following,
-          location: github_user.location
         )
           
         user_repositories.each do |repository|
