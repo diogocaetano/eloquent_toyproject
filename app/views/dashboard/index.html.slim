@@ -1,51 +1,55 @@
-.twPc-div
-  a class="twPc-bg twPc-block"
-  div
-    a.twPc-avatarLink tittle="#{@user.login}" href="#{@user.html_url}"
-      = image_tag @user.avatar_url, :width => 30, :height => 30, :class => "twPc-avatarImg"
+- if @user.nil?
+  .text-center
+    h1 User Not Found. Try Again.
+- else
+  .twPc-div
+    a class="twPc-bg twPc-block"
+    div
+      a.twPc-avatarLink tittle="#{@user.login}" href="#{@user.html_url}"
+        = image_tag @user.avatar_url, :width => 30, :height => 30, :class => "twPc-avatarImg"
 
-    .twPc-divUser
-      .twPc-divName
-        = @user.login
-      span 
-          = @user.company          
+      .twPc-divUser
+        .twPc-divName
+          = @user.login
+        span 
+            = @user.company          
 
-    .twPc-divStats
-      ul.twPc-Arrange
-        li.twPc-ArrangeSizeFit
-          a
-            span class="twPc-StatLabel twPc-block" Location
-            span.twPc-StatValue
-              = @user.location                      
-        li.twPc-ArrangeSizeFit
-          a
-            span class="twPc-StatLabel twPc-block" Public Repositories
-            span.twPc-StatValue
-              = @user.public_repos
-        li.twPc-ArrangeSizeFit
-          a
-            span class="twPc-StatLabel twPc-block" Following
-            span.twPc-StatValue
-              = @user.following           
+      .twPc-divStats
+        ul.twPc-Arrange
+          li.twPc-ArrangeSizeFit
+            a
+              span class="twPc-StatLabel twPc-block" Location
+              span.twPc-StatValue
+                = @user.location                      
+          li.twPc-ArrangeSizeFit
+            a
+              span class="twPc-StatLabel twPc-block" Public Repositories
+              span.twPc-StatValue
+                = @user.public_repos
+          li.twPc-ArrangeSizeFit
+            a
+              span class="twPc-StatLabel twPc-block" Following
+              span.twPc-StatValue
+                = @user.following           
 
-table class="table table-bordered table-striped sortable"
-  thead
-    tr
-      th Owner
-      th Repository Name
-      th Created at
-
-  tbody
-    - @repositories.each do |repository|
+  table class="table table-bordered table-striped sortable"
+    thead
       tr
-        td = image_tag repository.owner.avatar_url, :width => 30, :height => 30
-        td = link_to repository.name, repository.html_url
-        td = repository.created_at.to_time.strftime("%m/%d/%Y %H:%I:%S")
-br
+        th Owner
+        th Repository Name
+        th Created at
 
-h1 DEBUG
+    tbody
+      - @repositories.each do |repository|
+        tr
+          td = image_tag repository.owner.avatar_url, :width => 30, :height => 30
+          td = link_to repository.name, repository.html_url
+          td = repository.created_at.to_time.strftime("%m/%d/%Y %H:%I:%S")
+  br
 
-p
-  = @user.inspect
-p
-  = @repositories
+  h1 DEBUG
+
+  p
+    = @user.inspect
+  p
+    = @repositories
