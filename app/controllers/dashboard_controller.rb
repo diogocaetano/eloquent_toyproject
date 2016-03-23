@@ -21,6 +21,10 @@ class DashboardController < ApplicationController
           html_url: github_user.html_url,
           repos_url: github_user.repos_url,
           type: github_user.type,
+          public_repos: github_user.public_repos,
+          company: github_user.company,
+          following: github_user.following,
+          location: github_user.location
         )
           
         user_repositories.each do |repository|
@@ -54,4 +58,10 @@ class DashboardController < ApplicationController
     end
   end
 
-end
+  private
+
+  def user_params
+    params.require(:user).permit(:login, :avatar_url, :url, :html_url, :repos_url, :type)
+  end
+
+end 

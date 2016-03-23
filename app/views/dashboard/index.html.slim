@@ -46,10 +46,3 @@
           td = link_to repository.name, repository.html_url
           td = repository.created_at.to_time.strftime("%m/%d/%Y %H:%I:%S")
   br
-
-  h1 DEBUG
-
-  p
-    = @user.inspect
-  p
-    = @repositories

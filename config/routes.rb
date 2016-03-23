@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     end
   end
 
-  # root to: "dashboard#index", github_user: 'diogocaetano'
+  root to: "dashboard#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
