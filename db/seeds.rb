@@ -4,4 +4,4 @@
 # Examples:
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-	ApyKey.create(access_token: '15ae2edf99da63f614bf621cb4321eb7')
+	ApiKey.create(access_token: "15ae2edf99da63f614bf621cb4321eb7")

@@ -21,10 +21,10 @@ class DashboardController < ApplicationController
           html_url: github_user.html_url,
           repos_url: github_user.repos_url,
           type: github_user.type,
-          # public_repos: github_user.public_repos,
-          # company: github_user.company,
-          # following: github_user.following,
-          # location: github_user.location
+          public_repos: github_user.public_repos,
+          company: github_user.company,
+          following: github_user.following,
+          location: github_user.location
         )
           
         user_repositories.each do |repository|
