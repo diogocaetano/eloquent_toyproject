@@ -1,28 +1,58 @@
-== README
+== Imply
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Observações gerais
 
-Things you may want to cover:
+Filtrar os repositórios do usuário pelo papel do usuário;
+Não entetendemos bem o requisito, quais são os papeis do usuário?
 
-* Ruby version
+Ordenar os repositórios do usuário em ordem alfabética e criação;
+Não foi feito. Mas se fizemos fariamos utilizando uma 3 opções na ordem de uso:
 
-* System dependencies
+1 Usar Angula
+2 Usar alguma lib javascript 
+3 Usar back-end + javascript
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Na nossa metodologia, utilizamos alguns recursos não usados no projeto, como: seguimentação de branch por ambiente, pull request ...
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Cardápio da API:
+
+Lembrar de rodar o comando de SEED antes de utilziar a api, porque é cadastrado a API KEY que está sendo utilizada no cardápio (o mesmo serve para rodar os testes). A api só funcionar depois que o usuário é visita quando existe o salvamento do mesmo no banco de dados.
+
+Usuário:
+
+$.ajax({
+        type: "get",
+        url: 'http://localhost:3000/api/v1/diogocaetano',
+        headers: { 'api-key' : "15ae2edf99da63f614bf621cb4321eb7"}
+});
+
+
+Repositorios do usuário:
+
+
+$.ajax({
+        type: "get",
+        url: 'http://localhost:3000/api/v1/repositories/diogocaetano.json',
+        headers: { 'api-key' : "15ae2edf99da63f614bf621cb4321eb7"}
+});
+
+
+
+Rodar o projeto:
+
+bundle install
+
+rake db:create
+
+rake db:migrate
+
+rake db:seed
+
+Para rodar os testes:
+
+rake db:test:prepare
+
+bundle exec rake db:seed RAILS_ENV=test
+
+rspec spec
